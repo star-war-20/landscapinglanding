@@ -1090,14 +1090,18 @@
             }
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 1024px) {
             .service-card-v2 {
                 flex: 0 0 100%;
             }
 
+            .services-track {
+                gap: 0 !important;
+            }
+
             .services-header-v2 {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 gap: 30px;
             }
         }
@@ -1249,15 +1253,17 @@
             margin-bottom: 0;
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1024px) {
             .gallery-v3-grid {
-                grid-auto-columns: calc(50% - 15px);
+                display: flex !important;
+                grid-auto-flow: unset !important;
+                grid-auto-columns: unset !important;
+                gap: 0 !important;
             }
-        }
-
-        @media (max-width: 600px) {
-            .gallery-v3-grid {
-                grid-auto-columns: 100%;
+            .gallery-v3-card {
+                flex: 0 0 100% !important;
+                width: 100% !important;
+                min-width: 100% !important;
             }
         }
 
@@ -1601,9 +1607,17 @@
             transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
             .testimonials-v2-grid {
-                grid-auto-columns: 100%;
+                display: flex !important;
+                grid-auto-flow: unset !important;
+                grid-auto-columns: unset !important;
+                gap: 0 !important;
+            }
+            .testimonial-v2-card {
+                flex: 0 0 100% !important;
+                width: 100% !important;
+                min-width: 100% !important;
             }
         }
 
@@ -1670,14 +1684,11 @@
             color: var(--secondary);
         }
 
-        @media (max-width: 900px) {
-            .testimonials-v2-grid {
-                grid-template-columns: 1fr;
-            }
-
+        @media (max-width: 1024px) {
             .testimonials-header {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+                text-align: center;
                 gap: 30px;
             }
 
@@ -2579,22 +2590,36 @@
         }
 
         @media(max-width:768px) {
-
             .landscape-section {
                 padding: 60px 20px;
+                text-align: center !important;
+            }
+
+            .content-box {
+                text-align: center !important;
             }
 
             .content-box h2 {
-                font-size: 34px;
+                font-size: 34px !important;
+                text-align: center !important;
             }
 
             .content-box p {
-                font-size: 15px;
-                line-height: 1.9;
+                font-size: 15px !important;
+                line-height: 1.9 !important;
+                text-align: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .content-box a {
+                margin: 0 auto !important;
+                display: inline-flex !important;
             }
 
             .before-after-container {
-                height: 350px;
+                height: 350px !important;
+                margin: 20px auto !important;
             }
 
             .slider-button {
@@ -2603,6 +2628,29 @@
                 font-size: 18px;
             }
 
+            /* Additional Centering */
+            .hero-content { text-align: center !important; }
+            .hero-badges { justify-content: center !important; }
+            .hero-btns { justify-content: center !important; }
+            .hero-trust { justify-content: center !important; }
+            /* Services Nav Under Content on Mobile */
+            #services-v2 .container { display: flex !important; flex-direction: column !important; align-items: center !important; }
+            .services-header-v2 { display: contents !important; }
+            .services-header-v2 h2 { order: 1 !important; text-align: center !important; margin-bottom: 30px !important; width: 100% !important; }
+            .services-viewport { order: 2 !important; width: 100% !important; }
+            #services-v2 .gallery-nav { order: 3 !important; justify-content: center !important; margin: 40px auto 0 !important; width: auto !important; display: flex !important; }
+
+            .stats-inner { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 40px 20px !important; justify-items: center !important; }
+            .stat-item { width: 100% !important; }
+            .stat-num { font-size: 2.2rem !important; }
+            .stat-label { font-size: 0.75rem !important; }
+            .areas-list-v4 { grid-template-columns: repeat(2, 1fr) !important; text-align: center !important; gap: 15px !important; justify-items: center !important; }
+            .area-item-v4 { justify-content: center !important; width: 100% !important; max-width: 160px !important; padding: 8px 10px !important; font-size: 0.85rem !important; }
+            .areas-contact-v4 { text-align: center !important; display: flex !important; flex-direction: column !important; gap: 10px !important; align-items: center !important; }
+            .areas-header-v4 { text-align: center !important; }
+            .faq-v2-intro { text-align: center !important; }
+            .faq-v2-intro p { margin-left: auto !important; margin-right: auto !important; }
+            .main-inner { justify-content: center !important; }
         }
     </style>
 </head>
@@ -2868,9 +2916,9 @@
     </section>
     <section id="services">
         <div class="container">
-            <div class="services-header-v2 reveal">
-                <h2>Our <span>Premium</span> Services</h2>
-                <div class="gallery-nav" style="margin-bottom: 0;">
+            <div class="services-header-v2">
+                <h2 class="reveal">Our <span>Premium</span> Services</h2>
+                <div class="gallery-nav reveal" style="margin-bottom: 0;">
                     <button class="nav-btn prev" id="service-prev" aria-label="Previous Service">&lt;</button>
                     <div class="nav-divider"></div>
                     <button class="nav-btn next" id="service-next" aria-label="Next Service">&gt;</button>
@@ -3752,8 +3800,8 @@
         let autoSlideInterval;
 
         function getItemsPerPage() {
-            if (window.innerWidth <= 600) return 1;
-            if (window.innerWidth <= 1100) return 2;
+            if (window.innerWidth <= 1024) return 1;
+            if (window.innerWidth <= 1200) return 2;
             return 4;
         }
 
@@ -3768,7 +3816,7 @@
         }
 
         function showGalleryPage(page) {
-            const gap = 30;
+            const gap = window.innerWidth <= 1024 ? 0 : 30;
             const offset = page * (100 + (gap / galleryTrack.offsetWidth * 100 * itemsPerPage));
             // simplified: move by 100% of viewport + gap per page
             // Since we show 'itemsPerPage', 100% of viewport contains those items.
@@ -3860,7 +3908,7 @@
         let tAutoSlideInterval;
 
         function getTItemsPerPage() {
-            return window.innerWidth <= 900 ? 1 : 2;
+            return window.innerWidth <= 1024 ? 1 : 2;
         }
 
         function updateTestimonialLayout() {
@@ -3874,7 +3922,7 @@
         }
 
         function showTestimonialPage(page) {
-            const gap = 40;
+            const gap = window.innerWidth <= 1024 ? 0 : 40;
             testimonialTrack.style.transform = `translateX(calc(-${page * 100}% - ${page * gap}px))`;
 
             const prevBtn = document.getElementById('testimonial-prev');
@@ -3929,8 +3977,8 @@
         let totalSPages = Math.ceil(serviceCards.length / sItemsPerPage);
 
         function getSItemsPerPage() {
-            if (window.innerWidth <= 700) return 1;
-            if (window.innerWidth <= 1000) return 2;
+            if (window.innerWidth <= 1024) return 1;
+            if (window.innerWidth <= 1200) return 2;
             return 3;
         }
 
@@ -3945,7 +3993,7 @@
         }
 
         function showServicePage(page) {
-            const gap = 30;
+            const gap = window.innerWidth <= 1024 ? 0 : 30;
             serviceTrack.style.transform = `translateX(calc(-${page * 100}% - ${page * gap}px))`;
 
             const prevBtn = document.getElementById('service-prev');
