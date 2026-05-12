@@ -3975,6 +3975,22 @@
         const serviceCards = document.querySelectorAll('.service-card-v2');
         let sItemsPerPage = getSItemsPerPage();
         let totalSPages = Math.ceil(serviceCards.length / sItemsPerPage);
+        let sAutoSlideInterval;
+
+        function startSAutoSlide() {
+            stopSAutoSlide();
+            sAutoSlideInterval = setInterval(() => {
+                serviceCurrentPage++;
+                if (serviceCurrentPage >= totalSPages) {
+                    serviceCurrentPage = 0;
+                }
+                showServicePage(serviceCurrentPage);
+            }, 5000); // 5 seconds
+        }
+
+        function stopSAutoSlide() {
+            if (sAutoSlideInterval) clearInterval(sAutoSlideInterval);
+        }
 
         function getSItemsPerPage() {
             if (window.innerWidth <= 1024) return 1;
@@ -4015,24 +4031,36 @@
             serviceCurrentPage--;
             if (serviceCurrentPage < 0) serviceCurrentPage = totalSPages - 1;
             showServicePage(serviceCurrentPage);
+            startSAutoSlide(); // Reset timer
         });
 
         document.getElementById('service-next').addEventListener('click', () => {
             serviceCurrentPage++;
             if (serviceCurrentPage >= totalSPages) serviceCurrentPage = 0;
             showServicePage(serviceCurrentPage);
+            startSAutoSlide(); // Reset timer
         });
 
         const sViewport = document.getElementById('services-viewport');
         let sTouchStartX = 0;
         let sTouchEndX = 0;
 
-        sViewport.addEventListener('touchstart', e => sTouchStartX = e.changedTouches[0].screenX);
+        sViewport.addEventListener('touchstart', e => {
+            sTouchStartX = e.changedTouches[0].screenX;
+            stopSAutoSlide();
+        });
         sViewport.addEventListener('touchend', e => {
             sTouchEndX = e.changedTouches[0].screenX;
             if (sTouchEndX < sTouchStartX - 50) document.getElementById('service-next').click();
             if (sTouchEndX > sTouchStartX + 50) document.getElementById('service-prev').click();
+            startSAutoSlide();
         });
+
+        sViewport.addEventListener('mouseenter', stopSAutoSlide);
+        sViewport.addEventListener('mouseleave', startSAutoSlide);
+
+        // Start Auto Slide
+        startSAutoSlide();
 
         // Update existing resize listener
         window.addEventListener('resize', () => {
