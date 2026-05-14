@@ -2619,6 +2619,7 @@
             font-weight: 700;
             border-radius: 4px;
             z-index: 10;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
         .before-label {
@@ -4285,10 +4286,10 @@
     <script>
 
         const container = document.getElementById("container");
-
         const afterWrapper = document.getElementById("afterWrapper");
-
         const slider = document.getElementById("slider");
+        const beforeLabel = container.querySelector(".before-label");
+        const afterLabel = container.querySelector(".after-label");
 
         let isDragging = false;
 
@@ -4347,8 +4348,24 @@
             let percent = (position / rect.width) * 100;
 
             afterWrapper.style.width = percent + "%";
-
             slider.style.left = percent + "%";
+
+            // Hide labels when slider is at extreme positions
+            if (percent > 95) {
+                afterLabel.style.opacity = "0";
+                afterLabel.style.visibility = "hidden";
+            } else {
+                afterLabel.style.opacity = "1";
+                afterLabel.style.visibility = "visible";
+            }
+
+            if (percent < 5) {
+                beforeLabel.style.opacity = "0";
+                beforeLabel.style.visibility = "hidden";
+            } else {
+                beforeLabel.style.opacity = "1";
+                beforeLabel.style.visibility = "visible";
+            }
         }
 
     </script>
