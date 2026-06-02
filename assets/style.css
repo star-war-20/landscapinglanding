@@ -471,6 +471,296 @@
              display: none;
          }
 
+     /* ════════════════════════════════
+        NEW CUSTOM HERO STYLE (MATCHING USER SCREENSHOT)
+        ════════════════════════════════ */
+     #hero {
+         min-height: 100vh;
+        padding: 137px 0 1px;
+         display: flex;
+         align-items: center;
+         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.45)), url('images/Work Completed 4.jpeg') center/cover no-repeat;
+         position: relative;
+         overflow: hidden;
+     }
+
+     /* Dark semi-transparent box for heading */
+     .hero-text-box-v5 {
+         background: rgba(0, 0, 0, 0.65);
+         backdrop-filter: blur(12px);
+         -webkit-backdrop-filter: blur(12px);
+         border: 1px solid rgba(255, 255, 255, 0.2);
+         padding: 40px;
+         border-radius: 16px;
+         max-width: 720px;
+         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+         margin-bottom: 30px;
+     }
+
+     .hero-text-box-v5 h1 {
+         font-size: clamp(2rem, 5.5vw, 3.2rem);
+         font-weight: 800;
+         line-height: 1.2;
+         color: #fff;
+         margin: 0;
+         letter-spacing: -0.02em;
+         font-family: var(--ff-main);
+     }
+
+     /* Action area wrapping buttons */
+     .hero-action-v5 {
+         position: relative;
+         display: inline-flex;
+         align-items: center;
+         gap: 20px;
+         margin-top: 15px;
+         z-index: 10;
+         flex-wrap: wrap;
+     }
+
+     /* Grass Green Pill Button */
+     .btn-green-pill {
+         position: relative;
+         z-index: 1;
+         background: linear-gradient(135deg, #5cbd15 0%, #4ea80c 100%);
+         color: #fff;
+         padding: 18px 45px;
+         font-size: 1.2rem;
+         font-weight: 800;
+         text-decoration: none;
+         border-radius: 100px;
+         box-shadow: 0 8px 25px rgba(78, 168, 12, 0.4);
+         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+         border: 2px solid #fff;
+         text-transform: capitalize;
+         display: inline-block;
+     }
+
+     .btn-green-pill:hover {
+         transform: translateY(-4px) scale(1.03);
+         box-shadow: 0 12px 30px rgba(78, 168, 12, 0.6);
+         background: linear-gradient(135deg, #6cd41a 0%, #5cbd15 100%);
+     }
+
+     /* Orange Gradient Call Button */
+     .btn-orange-pill {
+         position: relative;
+         z-index: 1;
+         background: linear-gradient(135deg, #f26a2e 0%, #d24e12 100%);
+         color: #fff;
+         padding: 18px 45px;
+         font-size: 1.2rem;
+         font-weight: 800;
+         text-decoration: none;
+         border-radius: 100px;
+         box-shadow: 0 8px 25px rgba(242, 106, 46, 0.4);
+         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+         border: 2px solid #fff;
+         text-transform: capitalize;
+         display: inline-block;
+         animation: orangeBtnPulse 2.5s infinite ease-in-out;
+     }
+
+     .btn-orange-pill:hover {
+         transform: translateY(-4px) scale(1.03);
+         box-shadow: 0 15px 35px rgba(242, 106, 46, 0.7);
+         background: linear-gradient(135deg, #f47e47 0%, #f26a2e 100%);
+     }
+
+     @keyframes orangeBtnPulse {
+         0% {
+             box-shadow: 0 8px 25px rgba(242, 106, 46, 0.4);
+         }
+         50% {
+             box-shadow: 0 8px 35px rgba(242, 106, 46, 0.75), 0 0 15px rgba(242, 106, 46, 0.3);
+         }
+         100% {
+             box-shadow: 0 8px 25px rgba(242, 106, 46, 0.4);
+         }
+     }
+
+     /* USPs & Badges Layout under Buttons */
+     .hero-usps-v5 {
+         display: flex;
+         gap: 30px;
+         margin-top: 35px;
+         flex-wrap: wrap;
+         z-index: 10;
+         position: relative;
+     }
+
+     .usp-item-v5 {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         color: #fff;
+         font-weight: 600;
+         font-size: 1.05rem;
+     }
+
+     .usp-icon-v5 {
+         width: 24px;
+         height: 24px;
+         background: #F26A2E;
+         color: #fff;
+         border-radius: 50%;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 0.8rem;
+         font-weight: 800;
+     }
+
+     .hero-badges-v5 {
+         display: flex;
+         gap: 15px;
+         margin-top: 25px;
+         flex-wrap: wrap;
+         z-index: 10;
+         position: relative;
+     }
+
+     .badge-item-v5 {
+         background: #fff;
+         padding: 8px 20px;
+         border-radius: 12px;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         height: 52px;
+     }
+
+     .badge-img-google {
+         height: 20px;
+         width: auto;
+     }
+
+     .badge-stars-google {
+         color: #FFB800;
+         font-size: 1.1rem;
+         letter-spacing: 1px;
+         display: flex;
+         align-items: center;
+     }
+
+     .badge-img-rated {
+         height: 26px;
+         width: auto;
+     }
+
+     /* Smiling Man on the Right */
+     .hero-grid-v5 {
+         display: grid;
+         grid-template-columns: 1.2fr 0.8fr;
+         gap: 40px;
+         align-items: center;
+         min-height: calc(100vh - 160px);
+     }
+
+     .hero-right-v5 {
+         display: flex;
+         justify-content: flex-end;
+         align-items: flex-end;
+         align-self: flex-end;
+         position: relative;
+     }
+
+     .hero-man-img-v5 {
+         width: 100%;
+         max-width: 480px;
+         height: auto;
+         display: block;
+         filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.35));
+         animation: heroManEntrance 1s ease-out;
+     }
+
+     @keyframes heroManEntrance {
+         0% {
+             opacity: 0;
+             transform: translateY(40px);
+         }
+         100% {
+             opacity: 1;
+             transform: translateY(0);
+         }
+     }
+
+     /* Responsive Layout */
+     @media (max-width: 991px) {
+         .hero-grid-v5 {
+             grid-template-columns: 1fr;
+             text-align: center;
+             padding-top: 40px;
+             gap: 50px;
+         }
+
+         .hero-text-box-v5 {
+             margin: 0 auto 30px;
+             padding: 25px 30px;
+         }
+
+         .hero-action-v5 {
+             justify-content: center;
+         }
+
+         .hero-right-v5 {
+             justify-content: center;
+         }
+         
+         .hero-man-img-v5 {
+             max-width: 360px;
+         }
+         .hero-usps-v5 {
+             justify-content: center;
+             margin-top: 30px;
+         }
+         .hero-badges-v5 {
+             justify-content: center;
+             margin-top: 20px;
+         }
+     }
+
+     @media (max-width: 480px) {
+         .hero-text-box-v5 {
+             padding: 25px 20px;
+         }
+         .hero-text-box-v5 h1 {
+             font-size: 1.8rem;
+         }
+         .hero-action-v5 {
+             flex-direction: column;
+             gap: 15px;
+             margin-top: 5px;
+         }
+         .btn-green-pill,
+         .btn-orange-pill {
+             padding: 15px 30px;
+             font-size: 1.05rem;
+             width: 100%;
+             text-align: center;
+         }
+         .hero-usps-v5 {
+             flex-direction: column;
+             align-items: flex-start;
+             gap: 15px;
+             display: inline-flex;
+             text-align: left;
+             margin: 30px auto 0;
+         }
+         .usp-item-v5 {
+             font-size: 1rem;
+         }
+         .hero-badges-v5 {
+             justify-content: center;
+             gap: 12px;
+         }
+         .badge-item-v5 {
+             padding: 6px 15px;
+             height: 48px;
+         }
+     }
          #hero {
              padding-top: 120px;
          }
@@ -481,87 +771,501 @@
      }
 
      /* ════════════════════════════════
-       HERO
-       ════════════════════════════════ */
+        NEW CUSTOM HERO STYLE (MATCHING USER SCREENSHOT)
+        ════════════════════════════════ */
      #hero {
          min-height: 100vh;
-         padding: 160px 0 100px;
+        padding: 137px 0 1px;
          display: flex;
          align-items: center;
-         background:
-             linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%),
-             url('assets/images/driveaways.jpeg') center/cover no-repeat;
+         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.45)), url('images/Work Completed 4.jpeg') center/cover no-repeat;
          position: relative;
          overflow: hidden;
      }
 
-     #hero::before {
-         content: '';
-         position: absolute;
-         inset: 0;
-         background: radial-gradient(circle at 70% 30%, rgba(242, 106, 46, 0.1) 0%, transparent 50%);
-         pointer-events: none;
+     /* Dark semi-transparent box for heading */
+     .hero-text-box-v5 {
+         background: rgba(0, 0, 0, 0.25);
+         backdrop-filter: blur(12px);
+         -webkit-backdrop-filter: blur(12px);
+         border: 1px solid rgba(255, 255, 255, 0.2);
+         padding: 40px;
+         border-radius: 16px;
+         max-width: 720px;
+         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+         margin-bottom: 30px;
      }
 
-     .hero-grid {
-         display: grid;
-         grid-template-columns: 1.2fr 0.8fr;
-         gap: 80px;
+     .hero-text-box-v5 h1 {
+         font-size: clamp(2rem, 5.5vw, 3.2rem);
+         font-weight: 800;
+         line-height: 1.2;
+         color: #fff;
+         margin: 0;
+         letter-spacing: -0.02em;
+         font-family: var(--ff-main);
+     }
+
+     /* Action area wrapping buttons */
+     .hero-action-v5 {
+         position: relative;
+         display: inline-flex;
          align-items: center;
-     }
-
-     .hero-content h1 {
-         font-size: clamp(3rem, 8vw, 4.5rem);
-         font-weight: 900;
-         line-height: 1.1;
-         color: var(--primary);
-         margin-bottom: 24px;
-         letter-spacing: -0.04em;
-     }
-
-     .hero-content h1 em {
-         font-style: normal;
-         color: var(--secondary);
-     }
-
-     .hero-content p {
-         font-size: 1.35rem;
-         color: var(--ink-muted);
-         margin-bottom: 40px;
-         max-width: 600px;
-     }
-
-     .hero-btns {
-         display: flex;
-         gap: 16px;
-         flex-wrap: wrap;
-         margin-bottom: 48px;
-     }
-
-     .hero-trust {
-         display: flex;
-         gap: 32px;
+         gap: 20px;
+         margin-top: 15px;
+         z-index: 10;
          flex-wrap: wrap;
      }
 
-     .trust-item {
+     /* Grass Green Pill Button */
+     .btn-green-pill {
+         position: relative;
+         z-index: 1;
+         background: linear-gradient(135deg, #5cbd15 0%, #4ea80c 100%);
+         color: #fff;
+         padding: 18px 45px;
+         font-size: 1.2rem;
+         font-weight: 800;
+         text-decoration: none;
+         border-radius: 100px;
+         box-shadow: 0 8px 25px rgba(78, 168, 12, 0.4);
+         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+         border: 2px solid #fff;
+         text-transform: capitalize;
+         display: inline-block;
+     }
+
+     .btn-green-pill:hover {
+         transform: translateY(-4px) scale(1.03);
+         box-shadow: 0 12px 30px rgba(78, 168, 12, 0.6);
+         background: linear-gradient(135deg, #6cd41a 0%, #5cbd15 100%);
+     }
+
+     /* Orange Gradient Call Button */
+     .btn-orange-pill {
+         position: relative;
+         z-index: 1;
+         background: linear-gradient(135deg, #f26a2e 0%, #d24e12 100%);
+         color: #fff;
+         padding: 18px 45px;
+         font-size: 1.2rem;
+         font-weight: 800;
+         text-decoration: none;
+         border-radius: 100px;
+         box-shadow: 0 8px 25px rgba(242, 106, 46, 0.4);
+         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+         border: 2px solid #fff;
+         text-transform: capitalize;
+         display: inline-block;
+         animation: orangeBtnPulse 2.5s infinite ease-in-out;
+     }
+
+     .btn-orange-pill:hover {
+         transform: translateY(-4px) scale(1.03);
+         box-shadow: 0 15px 35px rgba(242, 106, 46, 0.7);
+         background: linear-gradient(135deg, #f47e47 0%, #f26a2e 100%);
+     }
+
+     @keyframes orangeBtnPulse {
+         0% {
+             box-shadow: 0 8px 25px rgba(242, 106, 46, 0.4);
+         }
+         50% {
+             box-shadow: 0 8px 35px rgba(242, 106, 46, 0.75), 0 0 15px rgba(242, 106, 46, 0.3);
+         }
+         100% {
+             box-shadow: 0 8px 25px rgba(242, 106, 46, 0.4);
+         }
+     }
+
+     /* USPs & Badges Layout under Buttons */
+     .hero-usps-v5 {
+         display: flex;
+         gap: 30px;
+         margin-top: 35px;
+         flex-wrap: wrap;
+         z-index: 10;
+         position: relative;
+     }
+
+     .usp-item-v5 {
          display: flex;
          align-items: center;
          gap: 10px;
+         color: #fff;
          font-weight: 600;
-         color: var(--primary);
+         font-size: 1.05rem;
      }
 
-     .trust-item .tic {
+     .usp-icon-v5 {
          width: 24px;
          height: 24px;
-         background: var(--secondary);
+         background: #F26A2E;
          color: #fff;
          border-radius: 50%;
-         display: flex;
+         display: inline-flex;
          align-items: center;
          justify-content: center;
          font-size: 0.8rem;
+         font-weight: 800;
+     }
+
+     .hero-badges-v5 {
+         display: flex;
+         gap: 15px;
+         margin-top: 25px;
+         flex-wrap: wrap;
+         z-index: 10;
+         position: relative;
+     }
+
+     .badge-item-v5 {
+         background: #fff;
+         padding: 8px 20px;
+         border-radius: 12px;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         height: 52px;
+     }
+
+     .badge-img-google {
+         height: 20px;
+         width: auto;
+     }
+
+     .badge-stars-google {
+         color: #FFB800;
+         font-size: 1.1rem;
+         letter-spacing: 1px;
+         display: flex;
+         align-items: center;
+     }
+
+     .badge-img-rated {
+         height: 26px;
+         width: auto;
+     }
+
+     /* Smiling Man on the Right */
+     .hero-grid-v5 {
+         display: grid;
+         grid-template-columns: 1.2fr 0.8fr;
+         gap: 40px;
+         align-items: center;
+         min-height: calc(100vh - 160px);
+     }
+
+     .hero-right-v5 {
+         display: flex;
+         justify-content: flex-end;
+         align-items: flex-end;
+         align-self: flex-end;
+         position: relative;
+     }
+
+     .hero-man-img-v5 {
+         width: 100%;
+         max-width: 480px;
+         height: auto;
+         display: block;
+         filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.35));
+         animation: heroManEntrance 1s ease-out;
+     }
+
+     @keyframes heroManEntrance {
+         0% {
+             opacity: 0;
+             transform: translateY(40px);
+         }
+         100% {
+             opacity: 1;
+             transform: translateY(0);
+         }
+     }
+
+     /* Responsive Layout */
+     @media (max-width: 991px) {
+         .hero-grid-v5 {
+             grid-template-columns: 1fr;
+             text-align: center;
+             padding-top: 40px;
+             gap: 50px;
+         }
+
+         .hero-text-box-v5 {
+             margin: 0 auto 30px;
+             padding: 25px 30px;
+         }
+
+         .hero-action-v5 {
+             justify-content: center;
+         }
+
+         .hero-right-v5 {
+             justify-content: center;
+         }
+         
+         .hero-man-img-v5 {
+             max-width: 360px;
+         }
+         .hero-usps-v5 {
+             justify-content: center;
+             margin-top: 30px;
+         }
+         .hero-badges-v5 {
+             justify-content: center;
+             margin-top: 20px;
+         }
+     }
+
+     @media (max-width: 480px) {
+         .hero-text-box-v5 {
+             padding: 25px 20px;
+         }
+         .hero-text-box-v5 h1 {
+             font-size: 1.8rem;
+         }
+         .hero-action-v5 {
+             flex-direction: column;
+             gap: 15px;
+             margin-top: 5px;
+         }
+         .btn-green-pill,
+         .btn-orange-pill {
+             padding: 15px 30px;
+             font-size: 1.05rem;
+             width: 100%;
+             text-align: center;
+         }
+         .hero-usps-v5 {
+             flex-direction: column;
+             align-items: flex-start;
+             gap: 15px;
+             display: inline-flex;
+             text-align: left;
+             margin: 30px auto 0;
+         }
+         .usp-item-v5 {
+             font-size: 1rem;
+         }
+         .hero-badges-v5 {
+             justify-content: center;
+             gap: 12px;
+         }
+         .badge-item-v5 {
+             padding: 6px 15px;
+             height: 48px;
+         }
+     }
+         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+         border: 2px solid #fff;
+         text-transform: capitalize;
+         display: inline-block;
+         animation: orangeBtnPulse 2.5s infinite ease-in-out;
+     }
+
+     .btn-orange-pill:hover {
+         transform: translateY(-4px) scale(1.03);
+         box-shadow: 0 15px 35px rgba(242, 106, 46, 0.7);
+         background: linear-gradient(135deg, #f47e47 0%, #f26a2e 100%);
+     }
+
+     @keyframes orangeBtnPulse {
+         0% {
+             box-shadow: 0 8px 25px rgba(242, 106, 46, 0.4);
+         }
+         50% {
+             box-shadow: 0 8px 35px rgba(242, 106, 46, 0.75), 0 0 15px rgba(242, 106, 46, 0.3);
+         }
+         100% {
+             box-shadow: 0 8px 25px rgba(242, 106, 46, 0.4);
+         }
+     }
+
+     /* USPs & Badges Layout under Buttons */
+     .hero-usps-v5 {
+         display: flex;
+         gap: 30px;
+         margin-top: 35px;
+         flex-wrap: wrap;
+         z-index: 10;
+         position: relative;
+     }
+
+     .usp-item-v5 {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         color: #fff;
+         font-weight: 600;
+         font-size: 1.05rem;
+     }
+
+     .usp-icon-v5 {
+         width: 24px;
+         height: 24px;
+         background: #F26A2E;
+         color: #fff;
+         border-radius: 50%;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 0.8rem;
+         font-weight: 800;
+     }
+
+     .hero-badges-v5 {
+         display: flex;
+         gap: 15px;
+         margin-top: 25px;
+         flex-wrap: wrap;
+         z-index: 10;
+         position: relative;
+     }
+
+     .badge-item-v5 {
+         background: #fff;
+         padding: 8px 20px;
+         border-radius: 12px;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         height: 52px;
+     }
+
+     .badge-img-google {
+         height: 20px;
+         width: auto;
+     }
+
+     .badge-stars-google {
+         color: #FFB800;
+         font-size: 1.1rem;
+         letter-spacing: 1px;
+         display: flex;
+         align-items: center;
+     }
+
+     .badge-img-rated {
+         height: 26px;
+         width: auto;
+     }
+
+     /* Smiling Man on the Right */
+     .hero-grid-v5 {
+         display: grid;
+         grid-template-columns: 1.2fr 0.8fr;
+         gap: 40px;
+         align-items: center;
+         min-height: calc(100vh - 160px);
+     }
+
+     .hero-right-v5 {
+         display: flex;
+         justify-content: flex-end;
+         align-items: flex-end;
+         align-self: flex-end;
+         position: relative;
+     }
+
+     .hero-man-img-v5 {
+         width: 100%;
+         max-width: 480px;
+         height: auto;
+         display: block;
+         filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.35));
+         animation: heroManEntrance 1s ease-out;
+     }
+
+     @keyframes heroManEntrance {
+         0% {
+             opacity: 0;
+             transform: translateY(40px);
+         }
+         100% {
+             opacity: 1;
+             transform: translateY(0);
+         }
+     }
+
+     /* Responsive Layout */
+     @media (max-width: 991px) {
+         .hero-grid-v5 {
+             grid-template-columns: 1fr;
+             text-align: center;
+             padding-top: 40px;
+             gap: 50px;
+         }
+
+         .hero-text-box-v5 {
+             margin: 0 auto 30px;
+             padding: 25px 30px;
+         }
+
+         .hero-action-v5 {
+             justify-content: center;
+         }
+
+         .hero-right-v5 {
+             justify-content: center;
+         }
+         
+         .hero-man-img-v5 {
+             max-width: 360px;
+         }
+         .hero-usps-v5 {
+             justify-content: center;
+             margin-top: 30px;
+         }
+         .hero-badges-v5 {
+             justify-content: center;
+             margin-top: 20px;
+         }
+     }
+
+     @media (max-width: 480px) {
+         .hero-text-box-v5 {
+             padding: 25px 20px;
+         }
+         .hero-text-box-v5 h1 {
+             font-size: 1.8rem;
+         }
+         .hero-action-v5 {
+             flex-direction: column;
+             gap: 15px;
+             margin-top: 5px;
+         }
+         .btn-green-pill,
+         .btn-orange-pill {
+             padding: 15px 30px;
+             font-size: 1.05rem;
+             width: 100%;
+             text-align: center;
+         }
+         .hero-usps-v5 {
+             flex-direction: column;
+             align-items: flex-start;
+             gap: 15px;
+             display: inline-flex;
+             text-align: left;
+             margin: 30px auto 0;
+         }
+         .usp-item-v5 {
+             font-size: 1rem;
+         }
+         .hero-badges-v5 {
+             justify-content: center;
+             gap: 12px;
+         }
+         .badge-item-v5 {
+             padding: 6px 15px;
+             height: 48px;
+         }
      }
 
      .hero-form-card {
@@ -908,7 +1612,7 @@
 
      .service-img-v2 {
          width: 100%;
-         height: 240px;
+         height: 400px;
          overflow: hidden;
          margin-bottom: 25px;
      }
@@ -929,15 +1633,7 @@
          font-weight: 800;
          color: var(--primary);
          padding: 0 30px;
-         margin-bottom: 12px;
-     }
-
-     .service-card-v2 p {
-         font-size: 1rem;
-         color: var(--ink-muted);
-         padding: 0 30px;
          margin-bottom: 25px;
-         line-height: 1.6;
          flex-grow: 1;
      }
 
