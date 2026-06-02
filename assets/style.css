@@ -1060,6 +1060,7 @@
              height: 48px;
          }
      }
+        .btn-orange-pill {
          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
          border: 2px solid #fff;
          text-transform: capitalize;
